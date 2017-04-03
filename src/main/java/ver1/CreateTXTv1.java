@@ -22,8 +22,10 @@ public class CreateTXTv1 {
         StringBuilder sB = new StringBuilder();
         StringBuilder content = new StringBuilder();
         try {
-            excelReader = new BufferedReader(new InputStreamReader(new FileInputStream("D:\\practice\\AppConcat\\src\\main\\resources\\ресурсы1.txt"), Charset.forName("UTF-8")));
-            resourceReader = new BufferedReader(new InputStreamReader(new FileInputStream("D:\\practice\\AppConcat\\src\\main\\resources\\ресурсы1.txt"), Charset.forName("UTF-8")));
+            excelReader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream("D:\\practice\\AppConcat\\src\\main\\resources\\res.xls"), Charset.forName("UTF-8")));
+            resourceReader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream("D:\\practice\\AppConcat\\src\\main\\resources\\ресурсы1.txt"), Charset.forName("UTF-8")));
             Integer i = 0;
             while ((line = excelReader.readLine()) != null) {
                 excelFile.put(i, line);
@@ -32,6 +34,8 @@ public class CreateTXTv1 {
             Integer j = 0;
 
             while ((line = resourceReader.readLine()) != null) {
+                System.out.println("line from Txt file");
+                System.out.println(line);
                 resourcesFile.put(j, line);
                 j++;
             }
@@ -39,7 +43,7 @@ public class CreateTXTv1 {
                 List<String> d = Arrays.asList(s.split("\t"));
                 if (!d.contains("name")) {
                     for (String s1 : resourcesFile.values()) {
-                        List<String> b = Arrays.asList(s1.split("\\|"));
+                        List<String> b = Arrays.asList(s1.split(", "));
                         if (b.contains(d.get(1))) {
                             List<String> c = b.stream().filter(a -> !a.equals(d.get(1))).collect(Collectors.toList());
 // Remove duplicates
@@ -66,7 +70,8 @@ public class CreateTXTv1 {
                     }
                 }
             }
-            fileWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("D:\\practice\\AppConcat\\src\\main\\resources\\Final.txt"), Charset.forName("UTF-8")));
+            fileWriter = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream("D:\\practice\\AppConcat\\src\\main\\resources\\Final123.txt"), Charset.forName("UTF-8")));
             fileWriter.write(content.toString());
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,18 +1,17 @@
 package ver2;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * this class help me to prepare txt resource file
+ */
 public class ReadFileAndWriteIt {
     public static void main(String[] args) {
         String line;
         StringBuilder stringBuilder = new StringBuilder();
-        HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet("Похожие модели");
         BufferedReader resourceReader = null;
         List<String> content1 = new LinkedList<>();
         BufferedWriter resourceWriter = null;

@@ -17,9 +17,9 @@ public class TxtToExcel {
         List<DataModel> listTxt = new ArrayList<>();
         String line;
         HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet("Похожие модели");
+        HSSFSheet sheet = workbook.createSheet("Models");
 
-        try (BufferedReader br = new BufferedReader(new FileReader("D:\\practice\\AppConcat\\src\\main\\resources\\Final.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("D:\\practice\\AppConcat\\src\\main\\resources\\ресурсы3.txt"))) {
             while ((line = br.readLine()) != null) {
                 String[] s = line.split("\t");
                 if (s.length == 4) {
@@ -63,8 +63,8 @@ public class TxtToExcel {
         Row row = sheet.createRow(rowNum);
 
         row.createCell(0).setCellValue(dataModel.getOne());
-        row.createCell(1).setCellValue(dataModel.getTwo());
-        row.createCell(2).setCellValue(dataModel.getThree());
-        row.createCell(3).setCellValue(dataModel.getFour());
+        row.createCell(1).setCellValue(dataModel.getModel());
+        row.createCell(2).setCellValue(dataModel.getName());
+        row.createCell(3).setCellValue(dataModel.getRelatedProduct());
     }
 }

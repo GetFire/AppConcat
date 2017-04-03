@@ -19,7 +19,7 @@ public class CreateExcel {
             Sheet sheet = book.createSheet("Example of goods");
             Row row = sheet.createRow(0);
             Cell id = row.createCell(0);
-            id.setCellValue("product_id");
+            id.setCellValue("Product_id");
             Cell model = row.createCell(1);
             model.setCellValue("Model");
             Cell name = row.createCell(2);

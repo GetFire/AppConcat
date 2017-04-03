@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 
 /**
- * This class is created a niece resource file
+ * This class is created a comfortable resource file
  */
 public class CreateResources {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class CreateResources {
         BufferedReader br = null;
         BufferedWriter bw = null;
         try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(file), Charset.forName("Cp1251")));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(file), Charset.forName("UTF-8")));
             bw = new BufferedWriter(new FileWriter("D:\\practice\\AppConcat\\src\\main\\resources\\ресурсы3.txt"));
             String s;
             while ((s = br.readLine()) != null) {

@@ -5,32 +5,34 @@ package entity;
  */
 public class DataModel {
     private String one;
-    private  String  two;
-    private String three;
-    private String four;
+    private  String model;
+    private String name;
+    private String relatedProduct;
 
     public DataModel(String one, String two, String three, String four) {
         this.one = one;
-        this.two = two;
-        this.three = three;
-        this.four = four;
+        this.model = two;
+        this.name = three;
+        this.relatedProduct = four;
     }
 
     public DataModel(String one, String two, String three) {
         this.one = one;
-        this.two = two;
-        this.three = three;
-        this.four ="";
+        this.model = two;
+        this.name = three;
+        this.relatedProduct ="";
     }
 
-    @Override
+    public DataModel() {
+    }
+
     public String toString() {
 
         return "DataModel{" +
                 "one='" + one + '\'' +
-                ", two='" + two + '\'' +
-                ", three='" + three + '\'' +
-                ", four='" + four + '\'' +
+                ", model='" + model + '\'' +
+                ", name='" + name + '\'' +
+                ", relatedProduct='" + relatedProduct + '\'' +
                 '}';
     }
 
@@ -38,15 +40,31 @@ public class DataModel {
         return one;
     }
 
-    public String getTwo() {
-        return two;
+    public String getModel() {
+        return model;
     }
 
-    public String getThree() {
-        return three;
+    public String getName() {
+        return name;
     }
 
-    public String getFour() {
-        return four;
+    public String getRelatedProduct() {
+        return relatedProduct;
+    }
+
+    public void setOne(String one) {
+        this.one = one;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRelatedProduct(String relatedProduct) {
+        this.relatedProduct = relatedProduct;
     }
 }
